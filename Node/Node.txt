@@ -1,0 +1,6 @@
+Node
+
+Place all Node work here where it will be accessible from within the virtual environment and on the host.
+
+Run installnodejs.sh to install the latest version of node.
+

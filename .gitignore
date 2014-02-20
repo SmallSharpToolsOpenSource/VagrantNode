@@ -1,0 +1,9 @@
+## Vagrant, Chef and Node
+
+.vagrant
+node_modules
+*.swp
+cookbooks
+tmp
+Cheffile.lock
+
