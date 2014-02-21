@@ -5,4 +5,6 @@ dscacheutil -flushcache
 
 sudo gem install librarian-chef
 librarian-chef install
+
+vagrant plugin install vagrant-vbguest
 vagrant up

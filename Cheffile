@@ -4,6 +4,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook "apt"
 cookbook "apache2", {}
+cookbook "vim"
 cookbook "git", {}
 cookbook "postgresql", {}
-cookbook "nodejs", {:github=>"mdxp/nodejs-cookbook"}
+cookbook 'nodejs', :git => 'https://github.com/mdxp/nodejs-cookbook'

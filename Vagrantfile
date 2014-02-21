@@ -5,6 +5,8 @@
 
 Vagrant.configure("2") do |config|
 
+  config.vbguest.auto_update = true
+
   config.vm.box = "precise64.box"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
   config.ssh.forward_agent = true
@@ -18,6 +20,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = ["cookbooks"]
     chef.add_recipe :apt
+    chef.add_recipe 'vim'
     chef.add_recipe 'git'
     chef.add_recipe 'postgresql::server'
     chef.add_recipe 'nodejs'
@@ -54,7 +57,7 @@ Vagrant.configure("2") do |config|
           }
         ],
         :password => {
-          :postgres => "password"
+          :postgres => "pw"
         }
       }
     }
