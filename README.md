@@ -9,10 +9,12 @@ The setup script is meant to be run on a Mac to set up this Vagrant environment.
 
 Run `setup.sh` to initially set up the environment as well add an entry in `/etc/hosts` so that the environment is easily accessible with a name.
 
-Installing a current and stable version of Node.js can be tricky. Ubuntu uses `apt-get` to manage packages. It references a package repository which has a very old version of Node.js. To get a more current version a PPA should be added. Instructions to install a
-newer version of Node.js can be found on the Joyent Wiki on [Installing Node](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
+Initially this Vagrant configuration and Chef provisioning script were installing an old
+version of Node.js so it has been revised to use a different Chef cookbook. Now it installs a current version of node and npm.
 
-Once the Vagrant environment is up the `vagrant ssh` command can be used to get into the virtual machine. In the `/node` directory is a script called `installnodejs.sh` which is used to run the following commands documented on the Joyent Wiki.
+There are also instructions on the Joyent Wiki on [Installing Node](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
+
+The commands to install Node.js on Ubuntu with a package are below.
 
     sudo apt-get update
     sudo apt-get install -y python-software-properties python g++ make
@@ -28,14 +30,16 @@ The PPA referenced here is maintained by Chris Lea and can be found at the link 
 
 [https://launchpad.net/~chris-lea/+archive/node.js](https://launchpad.net/~chris-lea/+archive/node.js)
 
-## Caveat
-
-It appears that node is not installed with this process. An older copy of node is still in `/usr/local/bin/node` is in place and running `sudo apt-get remove nodejs` does not remove it. Manually deleting it does clear it out and then the script to install node does run and properly installs a more current version. In order to ensure that the current version of node is installed this copy of node is deleted.
-
 ## Feedback
 
-I'd appreciate any feedback. I can be reached on Twitter at [http://twitter.com/brennanMKE](@brennanMKE) or on GitHub.
+I'd appreciate any feedback. I can be reached on Twitter as [@brennanMKE](http://twitter.com/brennanMKE) or on GitHub.
 
 ## License
 
-MIT
+VagrantNode is available under the MIT license. See the LICENSE file for more info.
+
+## Contact
+
+Brennan Stehling  
+[SmallSharpTools](http://www.smallsharptools.com/)  
+[@smallsharptools](https://twitter.com/smallsharptools) (Twitter)  
